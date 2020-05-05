@@ -4,7 +4,7 @@
 #
 Name     : azure-multiapi-storage
 Version  : 0.3.1
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/4e/ff/2f9cc5f900c1a719ac22c855422c27c1e64aaebdbb5301bd6b8ce932dd75/azure-multiapi-storage-0.3.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4e/ff/2f9cc5f900c1a719ac22c855422c27c1e64aaebdbb5301bd6b8ce932dd75/azure-multiapi-storage-0.3.1.tar.gz
 Summary  : Microsoft Azure Storage Client Library for Python with multi API version support.
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588708533
+export SOURCE_DATE_EPOCH=1588717561
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -80,6 +80,9 @@ python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## Remove excluded files
+rm -f %{buildroot}/usr/lib/python3.8/site-packages/azure/__init__.py
+rm -f %{buildroot}/usr/lib/python3.8/site-packages/azure/__pycache__/__init__.cpython-38.pyc
 
 %files
 %defattr(-,root,root,-)
