@@ -4,7 +4,7 @@
 #
 Name     : azure-multiapi-storage
 Version  : 0.3.1
-Release  : 5
+Release  : 6
 URL      : https://files.pythonhosted.org/packages/4e/ff/2f9cc5f900c1a719ac22c855422c27c1e64aaebdbb5301bd6b8ce932dd75/azure-multiapi-storage-0.3.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4e/ff/2f9cc5f900c1a719ac22c855422c27c1e64aaebdbb5301bd6b8ce932dd75/azure-multiapi-storage-0.3.1.tar.gz
 Summary  : Microsoft Azure Storage Client Library for Python with multi API version support.
@@ -13,11 +13,13 @@ License  : MIT
 Requires: azure-multiapi-storage-python = %{version}-%{release}
 Requires: azure-multiapi-storage-python3 = %{version}-%{release}
 Requires: azure-common
+Requires: azure-core
 Requires: azure-nspkg
 Requires: cryptography
 Requires: python-dateutil
 Requires: requests
 BuildRequires : azure-common
+BuildRequires : azure-core
 BuildRequires : azure-nspkg
 BuildRequires : buildreq-distutils3
 BuildRequires : cryptography
@@ -43,7 +45,6 @@ Requires: python3-core
 Provides: pypi(azure_multiapi_storage)
 Requires: pypi(azure_common)
 Requires: pypi(azure_core)
-Requires: pypi(azure_nspkg)
 Requires: pypi(cryptography)
 Requires: pypi(python_dateutil)
 Requires: pypi(requests)
@@ -61,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588717561
+export SOURCE_DATE_EPOCH=1607975853
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
